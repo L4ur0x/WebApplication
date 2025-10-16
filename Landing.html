@@ -8,26 +8,36 @@
 </head>
 <body id="grad1" >
     <div>
-        <h1>Laurin Chrystall</h1>
+        <h1>Placeholder</h1>
     </div>
         <h2>Projects</h2>
-    <div class="project-button-container">
+    <div class = "ProjectContainer">
         
-        <button class="project-button" data-projectId="1">Project 1</button>
+        
+        <div class="timeLine">            
+            <label id="firstTime" class="labelTime" style="align-self: left; transform: translate(-50%)">test</label>
+            <label id="lastTime" class="labelTime" style="align-self: right; margin-left: auto; transform: translate(50%);">test</label>
+            <div class="timePointer", style="align-self: left; "></div>
+            <div class="timePointer", style="align-self: right;  margin-left: 80vw;"></div>
+        </div>
+        <div class="project-button-container">
+            
+            <button class="project-button" data-projectId="1" data-Date="1.2.2024"></button>
 
-        <button class="project-button" data-projectId="2">Project 2</button>
+            <button class="project-button" data-projectId="2" data-Date="1.1.2025"></button>
+        </div>
+        <div class="ProjectFieldContainer">
+            <div id="textfieldContainer1" class = "ProjectField">
+                Hallo, ich bin Text 1
+            </div>
+            <div id="textfieldContainer2" class = "ProjectField">
+                Hallo, ich bin Text 2
+            </div>
+        </div>
     </div>
-    <div>
-    <div id="textfieldContainer1" class = "ProjectField">
-        Hallo, ich bin Text 1
-    </div>
-    <div id="textfieldContainer2" class = "ProjectField">
-        Hallo, ich bin Text 2
-    </div>
-    </div>
-    <div class="circle"><script src="circletest.js"></script></div>
-
+   
 
     <script src="textFieldPopUp.js"></script>
+    <script src="timeLine.js"></script>
 </body>
 </html>

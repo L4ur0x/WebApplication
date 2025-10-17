@@ -15,17 +15,20 @@ for(let i = 0; i < buttons.length; i++){
 
         // ensure target is above current before starting enter animation
         target.style.zIndex = ++zCounter;
-        target.classList.add('panel-enter');
+        requestAnimationFrame(() => {
+            target.classList.add('panel-enter');
+        });
         // force layout
         target.getBoundingClientRect();
         target.classList.add('panel-enter-active');
-
         // cleanup/finish for enter (once)
-        const onEnterEnd = (e) => {
-            if (e.target !== target) return;
+
+       const onEnterEnd = (e) => {
+        if (e.target !== target) return;
+        // event von child-Elementen ignorieren — currentTarget ist das Element, an das der Listener gebunden ist
+        if (e.currentTarget !== target) return;
             target.classList.remove('panel-enter', 'panel-enter-active');
             target.classList.add('active');
-            // keep z-index if you want it persistent or reset: target.style.zIndex = '';
         };
         target.addEventListener('transitionend', onEnterEnd, { once: true });
 
